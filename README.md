@@ -3,6 +3,9 @@
 Este é um simples conversor de JSON para CSV, construído usando HTML, CSS e JavaScript. 
 A aplicação permite que os usuários cole um JSON, escolham as colunas desejadas e convertam os dados para CSV.
 
+## Site para usar o aplicativo
+https://devleandrocoelho.github.io/jsonToCsv/
+
 ## Estrutura de Pastas
 
 - **`/`:** Raiz do projeto.
