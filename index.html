@@ -10,18 +10,25 @@
 
 <body>
   <div class="container">
-    <h1>Conversor de Json em CSV</h1>
-    <textarea id="jsonInput" placeholder="Cole seu JSON aqui"></textarea>
-    <button onclick="displayColumns()">Exibir Colunas</button>
-    <div id="columnSelection" style="display: none;">
-      <!-- Colunas serão exibidas aqui -->
+    <div id="container-cima">
+      <h1>Conversor de Json em CSV</h1>
+      <textarea id="jsonInput" placeholder="Cole seu JSON aqui"></textarea>
+      <button onclick="displayColumns()">Exibir Colunas</button>
+      <div id="columnSelection" style="display: none;">
+        <!-- Colunas serão exibidas aqui -->
+      </div>
+      <button id="convertToCSVBtn" onclick="convertToCSV()" style="display: none;">Exibir tabela</button>
     </div>
-    <!-- Botão para acionar a conversão, inicialmente escondido -->
-    <button id="convertToCSVBtn" onclick="convertToCSV()" style="display: none;">Exibir tabela</button>
-    <a id="downloadLink" style="display: none" download="output.csv">Baixar CSV</a>
-    <div id="csvOutput"></div>
+    <div id="container-baixo">
+      <button id="downloadBtn" onclick="downloadCSV()" style="display: none;">Baixar CSV</button>
+      <div id="csvOutput"></div>
+    </div>
   </div>
   <script src="script.js"></script>
+  <footer>
+    <p>Desenvolvido por Leandro Prazeres Coelho - <a href="https://https://github.com/devLeandroCoelho" target="_blank">devleandrocoelho</a></p>
+    </footer>
+    
 </body>
 
 </html>

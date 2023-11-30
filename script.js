@@ -60,8 +60,8 @@ function convertToCSV() {
     // Exibe o CSV gerado em formato de tabela
     displayCSV(csvData);
 
-    // Ativa o link para download
-    enableDownloadLink(csvData);
+    // Ativa o botão para baixar CSV
+    document.getElementById("downloadBtn").style.display = "inline-block";
   } catch (error) {
     alert("Erro ao converter JSON para CSV. Verifique o formato do JSON.");
   }
@@ -118,13 +118,18 @@ function displayCSV(csvData) {
   csvOutput.appendChild(table);
 }
 
-// Função para ativar o link de download com o CSV gerado
-function enableDownloadLink(csvData) {
-  const downloadLink = document.getElementById("downloadLink");
-  // Cria um link de download com os dados CSV codificados
-  downloadLink.href = `data:text/csv;charset=utf-8,${encodeURIComponent(
-    csvData
-  )}`;
-  // Exibe o link de download
-  downloadLink.style.display = "block";
+// Função para ativar o botão de download com o CSV gerado
+function enableDownloadButton() {
+  document.getElementById("downloadBtn").style.display = "inline-block";
+}
+
+// Função para baixar o CSV
+function downloadCSV() {
+  const csvData = document.getElementById("csvOutput").innerText;
+
+  const blob = new Blob([csvData], { type: "text/csv;charset=utf-8" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "output.csv";
+  link.click();
 }
