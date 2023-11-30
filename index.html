@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Conversor de Json em CSV</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Conversor de Json em CSV</h1>
+    <textarea id="jsonInput" placeholder="Cole seu JSON aqui"></textarea>
+    <button onclick="displayColumns()">Exibir Colunas</button>
+    <div id="columnSelection" style="display: none;">
+      <!-- Colunas serão exibidas aqui -->
+    </div>
+    <!-- Botão para acionar a conversão, inicialmente escondido -->
+    <button id="convertToCSVBtn" onclick="convertToCSV()" style="display: none;">Exibir tabela</button>
+    <a id="downloadLink" style="display: none" download="output.csv">Baixar CSV</a>
+    <div id="csvOutput"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
